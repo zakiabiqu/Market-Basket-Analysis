@@ -1,0 +1,6 @@
+Product Name    Quantity
+Snack           44
+Susu            37
+Gula            36
+Teh Celup       34
+Kopi            33
