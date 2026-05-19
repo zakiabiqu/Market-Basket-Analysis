@@ -1,0 +1,50 @@
+Apriori
+
+Parameter specification:
+ confidence minval smax arem  aval originalSupport maxtime support minlen maxlen
+         NA    0.1    1 none FALSE            TRUE       5    0.05      2      3
+            target  ext
+ frequent itemsets TRUE
+
+Absolute minimum support count: 5 
+
+set transactions ...[8 item(s), 100 transaction(s)] done.
+writing ... [20 set(s)] done.
+
+     items                     support count
+[1]  {Pet Food, Snack}         0.06     6   
+[2]  {Mie Instan, Susu}        0.09     9   
+[3]  {Mie Instan, Snack}       0.14    14   
+[4]  {Sirup, Teh Celup}        0.17    17   
+[5]  {Gula, Sirup}             0.09     9   
+[6]  {Sirup, Snack}            0.12    12   
+[7]  {Kopi, Susu}              0.20    20   
+[8]  {Gula, Kopi}              0.17    17   
+[9]  {Kopi, Snack}             0.12    12   
+[10] {Susu, Teh Celup}         0.09     9   
+[11] {Gula, Teh Celup}         0.19    19   
+[12] {Snack, Teh Celup}        0.12    12   
+[13] {Gula, Susu}              0.09     9   
+[14] {Snack, Susu}             0.11    11   
+[15] {Gula, Snack}             0.12    12   
+[16] {Gula, Sirup, Teh Celup}  0.09     9   
+[17] {Sirup, Snack, Teh Celup} 0.08     8   
+[18] {Gula, Kopi, Susu}        0.07     7   
+[19] {Gula, Kopi, Snack}       0.06     6   
+[20] {Gula, Snack, Teh Celup}  0.06     6   
+
+Association rules (supp=0.08, conf=0.6):
+    lhs                   rhs         support confidence coverage lift     count
+[1] {Gula, Sirup}      => {Teh Celup} 0.09    1.0000000  0.09     2.941176  9   
+[2] {Snack, Teh Celup} => {Sirup}     0.08    0.6666667  0.12     2.777778  8   
+[3] {Sirup}            => {Teh Celup} 0.17    0.7083333  0.24     2.083333 17   
+[4] {Sirup, Snack}     => {Teh Celup} 0.08    0.6666667  0.12     1.960784  8   
+[5] {Kopi}             => {Susu}      0.20    0.6060606  0.33     1.638002 20   
+
+Top 5 products by frequency:
+  Product Quantity
+1  Snack       44
+2   Susu       37
+3   Gula       36
+4 Teh Celup    34
+5   Kopi       33
