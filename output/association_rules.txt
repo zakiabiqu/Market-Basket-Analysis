@@ -1,0 +1,6 @@
+lhs                   rhs         support confidence coverage lift     count
+{Gula, Sirup}      => {Teh Celup} 0.09    1.0000000  0.09     2.941176  9   
+{Snack, Teh Celup} => {Sirup}     0.08    0.6666667  0.12     2.777778  8   
+{Sirup}            => {Teh Celup} 0.17    0.7083333  0.24     2.083333 17   
+{Sirup, Snack}     => {Teh Celup} 0.08    0.6666667  0.12     1.960784  8   
+{Kopi}             => {Susu}      0.20    0.6060606  0.33     1.638002 20   
