@@ -1,0 +1,73 @@
+================================================================================
+MARKET BASKET ANALYSIS - MODEL SUMMARY
+================================================================================
+Dataset: 100 transactions, 8 items
+Support threshold (frequent itemsets): 0.05
+Support threshold (rules): 0.08
+Confidence threshold: 0.6
+Max itemset length: 3
+
+--------------------------------------------------------------------------------
+FREQUENT ITEMSETS (support >= 0.05, minlen=2, maxlen=3)
+--------------------------------------------------------------------------------
+Total: 20 itemsets
+
+Itemset                                 Support   Count
+{Pet Food, Snack}                       0.06      6
+{Mie Instan, Susu}                      0.09      9
+{Mie Instan, Snack}                     0.14      14
+{Sirup, Teh Celup}                      0.17      17
+{Gula, Sirup}                           0.09      9
+{Sirup, Snack}                          0.12      12
+{Kopi, Susu}                            0.20      20
+{Gula, Kopi}                            0.17      17
+{Kopi, Snack}                           0.12      12
+{Susu, Teh Celup}                       0.09      9
+{Gula, Teh Celup}                       0.19      19
+{Snack, Teh Celup}                      0.12      12
+{Gula, Susu}                            0.09      9
+{Snack, Susu}                           0.11      11
+{Gula, Snack}                           0.12      12
+{Gula, Sirup, Teh Celup}                0.09      9
+{Sirup, Snack, Teh Celup}               0.08      8
+{Gula, Kopi, Susu}                      0.07      7
+{Gula, Kopi, Snack}                     0.06      6
+{Gula, Snack, Teh Celup}                0.06      6
+
+--------------------------------------------------------------------------------
+ASSOCIATION RULES (supp >= 0.08, conf >= 0.6, maxlen=3)
+--------------------------------------------------------------------------------
+Total: 5 rules
+
+Rule                                              Supp    Conf    Lift    Count
+{Gula, Sirup}          => {Teh Celup}            0.09    1.000    2.941   9
+{Snack, Teh Celup}     => {Sirup}                0.08    0.667    2.778   8
+{Sirup}                => {Teh Celup}            0.17    0.708    2.083   17
+{Sirup, Snack}         => {Teh Celup}            0.08    0.667    1.961   8
+{Kopi}                 => {Susu}                 0.20    0.606    1.638   20
+
+--------------------------------------------------------------------------------
+ITEM FREQUENCY (absolute & relative)
+--------------------------------------------------------------------------------
+Item         Absolute  Relative
+Snack        44        0.44
+Susu         37        0.37
+Gula         36        0.36
+Teh Celup    34        0.34
+Kopi         33        0.33
+Mie Instan   24        0.24
+Sirup        24        0.24
+Pet Food     16        0.16
+
+--------------------------------------------------------------------------------
+TOP 5 BEST-SELLING PRODUCTS
+--------------------------------------------------------------------------------
+1. Snack      (44)
+2. Susu       (37)
+3. Gula       (36)
+4. Teh Celup  (34)
+5. Kopi       (33)
+
+================================================================================
+END OF SUMMARY
+================================================================================
