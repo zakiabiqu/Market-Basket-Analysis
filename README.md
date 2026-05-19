@@ -1,98 +1,140 @@
-# Market Basket Analysis using Association Rules
+# Market Basket Analysis – Association Rules for Retail Data
 
-**Author:** Zaki Abiqu  
-**Tools:** R (arules, arulesViz)  
-**Goal:** Discover product associations from transaction data to support cross-selling and promotional strategies.
+**Author:** Zaki Abiyu Aqilah   
+**Tools:** R (`arules`, `arulesViz`)  
+**Goal:** Discover product associations and bundling opportunities from 100 transaction records
 
 ---
 
 ## Project Overview
 
-This project applies **Apriori algorithm** to find frequent itemsets and association rules from a small transaction dataset (10 transactions, 4 products). The analysis demonstrates how to:
+This project applies **Market Basket Analysis (MBA)** using the Apriori algorithm to uncover frequently bought‑together items from a real‑world minimarket dataset. By identifying strong association rules, the analysis provides actionable insights for store layout, product bundling, and cross‑selling strategies.
 
-- Load and inspect transaction data
-- Generate frequent itemsets with minimum support
-- Extract association rules with various confidence thresholds
-- Filter rules by lift, antecedent, and consequent
-- Visualize rules as a graph
-
-**Key Business Insight:**  
-Customers who buy **Gula** and **Pet Food** together are highly likely (100% confidence) to also buy **Sirup**. This rule has a lift of 1.67, indicating a strong positive association.
+**Key Results:**
+- **Top product** (most frequent): Snack (44/100 transactions)
+- **Strongest rule:** {Gula, Sirup} → {Teh Celup} (confidence = 100%, lift = 2.94)
+- **Most popular pair:** Kopi → Susu (support = 20%, count = 20 transactions)
 
 ---
 
 ## Dataset
 
-The dataset contains **10 transactions** from a retail store. Each transaction records which items were purchased together.
+The data consists of **100 transactions** covering **8 product categories**. The raw file (`data_transaksi.txt`) is **not included** in this repository — see [`data/README.md`](data/README.md) for the expected file format.
 
-### Items (4 products)
+| Product          | Frequency (absolute) |
+|------------------|----------------------|
+| Snack            | 44                   |
+| Susu             | 37                   |
+| Gula             | 36                   |
+| Teh Celup        | 34                   |
+| Kopi             | 33                   |
+| Mie Instan       | 24                   |
+| Sirup            | 24                   |
+| Pet Food         | 16                   |
 
-| Item Name |
-|-----------|
-| Gula |
-| Pet Food |
-| Sirup |
-| Teh Celup |
-
-### Transaction List (raw)
-
-| Transaction ID | Items Purchased |
-|----------------|-----------------|
-| #01 | Pet Food, Sirup, Teh Celup |
-| #02 | Gula, Teh Celup |
-| #03 | Pet Food, Sirup |
-| #04 | Sirup, Teh Celup |
-| #05 | Gula, Sirup, Teh Celup |
-| #06 | Pet Food, Teh Celup |
-| #07 | Pet Food, Sirup, Teh Celup |
-| #08 | Teh Celup |
-| #09 | Gula, Teh Celup |
-| #10 | Gula, Pet Food, Sirup |
-
-> **Note:** The original data file (`data_transaksi.txt`) is not included in this repository. See [`data/README.md`](data/README.md) for details on how to obtain or reproduce the data.
+> **Note:** `Teh Celup` appears in 34 transactions, making it the most common component of the strongest rules.
 
 ---
 
-## Key Results
+## Frequent Itemsets (support ≥ 0.05, minlen = 2, maxlen = 3)
 
-### Item Frequency (Absolute)
+The Apriori algorithm discovered **20 frequent itemsets**. Below are the most notable ones:
 
-| Item | Frequency (out of 10) |
-|------|----------------------|
-| Teh Celup | 8 |
-| Sirup | 6 |
-| Pet Food | 5 |
-| Gula | 4 |
+| Itemset                              | Support | Count |
+|--------------------------------------|---------|-------|
+| {Kopi, Susu}                         | 0.20    | 20    |
+| {Gula, Teh Celup}                    | 0.19    | 19    |
+| {Sirup, Teh Celup}                   | 0.17    | 17    |
+| {Mie Instan, Snack}                  | 0.14    | 14    |
+| {Gula, Sirup, Teh Celup}             | 0.09    |  9    |
+| {Gula, Kopi, Susu}                   | 0.07    |  7    |
+| {Gula, Kopi, Snack}                  | 0.06    |  6    |
+| {Pet Food, Snack}                    | 0.06    |  6    |
+| {Gula, Snack, Teh Celup}             | 0.06    |  6    |
 
-### Top 3 Frequent Itemsets (support ≥ 0.1, minlen=2)
+---
 
-| Itemset | Support | Count |
-|---------|---------|-------|
-| {Pet Food, Sirup} | 0.4 | 4 |
-| {Sirup, Teh Celup} | 0.4 | 4 |
-| {Pet Food, Teh Celup} | 0.3 | 3 |
+## Association Rules (support ≥ 0.08, confidence ≥ 0.6, maxlen = 3)
 
-### Selected Association Rules (confidence ≥ 0.5, support ≥ 0.1)
+Five rules were generated. The table below shows rules sorted by **lift** (strongest relationship first).
 
-| Rule (LHS → RHS) | Support | Confidence | Lift | Count |
-|------------------|---------|------------|------|-------|
-| {Pet Food} → {Sirup} | 0.4 | 0.80 | 1.33 | 4 |
-| {Gula, Pet Food} → {Sirup} | 0.1 | **1.00** | **1.67** | 1 |
-| {Pet Food, Teh Celup} → {Sirup} | 0.2 | 0.67 | 1.11 | 2 |
+| LHS                      | RHS        | Support | Confidence | Lift   | Count |
+|--------------------------|------------|---------|------------|--------|-------|
+| {Gula, Sirup}            | → Teh Celup | 0.09    | 1.000      | **2.94** | 9     |
+| {Snack, Teh Celup}       | → Sirup     | 0.08    | 0.667      | **2.78** | 8     |
+| {Sirup}                  | → Teh Celup | 0.17    | 0.708      | **2.08** | 17    |
+| {Sirup, Snack}           | → Teh Celup | 0.08    | 0.667      | **1.96** | 8     |
+| {Kopi}                   | → Susu      | 0.20    | 0.606      | **1.64** | 20    |
 
-### Best Recommendation Rule
+### Variable Importance (Product Frequency)
 
-- **If a customer buys Gula and Pet Food, then recommend Sirup**  
-  - Confidence = 100%  
-  - Lift = 1.67 (meaningful association)
+A simple frequency analysis shows the most important items in the dataset (based on absolute count):
+
+| Product      | Frequency | Importance (%) |
+|--------------|-----------|----------------|
+| Snack        | 44        | 100.0          |
+| Susu         | 37        |  84.1          |
+| Gula         | 36        |  81.8          |
+| Teh Celup    | 34        |  77.3          |
+| Kopi         | 33        |  75.0          |
+
+> **Insight:** While Snack is the most frequent item, the strongest rules are driven by **Teh Celup**, **Sirup**, and **Gula** combinations.
+
+---
+
+## Decision Rules (Business‑Friendly)
+
+### If a customer buys **Gula and Sirup**, they almost always buy **Teh Celup** (confidence 100%).
+- This triplet appears in 9 transactions.
+- **Action:** Place these three items together and offer a bundle discount.
+
+### If a customer buys **Snack and Teh Celup**, they often buy **Sirup** (confidence 67%).
+- This rule has very high lift (2.78), indicating a strong association.
+- **Action:** Cross‑promote Snack + Teh Celup with Sirup at the checkout.
+
+### If a customer buys **Kopi**, they are likely to buy **Susu** (confidence 61%, lift 1.64).
+- This is the most frequent rule (20 transactions).
+- **Action:** Create a “Coffee Corner” with Kopi and Susu displayed side by side.
+
+### If a customer buys **Sirup**, they are likely to buy **Teh Celup** (lift 2.08).
+- This pair appears in 17 transactions.
+- **Action:** Offer a “Teh Segar Bundle” (Sirup + Teh Celup) at a promotional price.
+
+---
+
+## Predictions on New Transactions (Example)
+
+Three hypothetical new transactions were evaluated against the discovered rules:
+
+| Transaction | Items Purchased                         | Recommended Add‑on (RHS) | Rule Used                      |
+|-------------|-----------------------------------------|---------------------------|--------------------------------|
+| New #1      | {Gula, Sirup}                           | Teh Celup                 | {Gula, Sirup} → Teh Celup      |
+| New #2      | {Snack, Teh Celup}                      | Sirup                     | {Snack, Teh Celup} → Sirup     |
+| New #3      | {Kopi}                                  | Susu                      | {Kopi} → Susu                  |
+
+> **How to use:** In a real‑time recommendation system, when a cashier scans these items, the system can suggest the matching RHS product to increase basket size.
+
+---
+
+## Visualizations
+
+- **Top 8 Items by Frequency** – Bar chart showing the most frequently purchased products.
+- **Scatter Plot** – Support vs. Confidence, shaded by Lift (identifies high‑quality rules).
+- **Graph‑based Visualization** – Interactive network of rules with lift > 1.3 (HTML widget).
+
+> 📁 All visual outputs are saved in the [`output/`](output/) folder.
 
 ---
 
 ## How to Run the Code
 
-1. Clone this repository.
+1. **Clone this repository**  
+   `git clone https://github.com/yourusername/Market-Basket-Analysis.git`
 
-2. Place the transaction data file (data_transaksi.txt) in the data/ folder.
-(See data/README.md for file format.)
+2. **Place your data file**  
+   Copy your transaction file (e.g., `data_transaksi.txt`) into the `data/` folder.
 
-3. Run the R script:
+3. **Run the R script**  
+   Open `analysis/market_basket.R` in RStudio and execute it line by line, or run:
+   ```r
+   source("analysis/market_basket.R")
