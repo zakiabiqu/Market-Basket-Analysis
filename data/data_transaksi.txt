@@ -1,0 +1,249 @@
+Kode Transaksi	Item
+#001	Teh Celup
+#001	Gula
+#002	Kopi
+#002	Gula
+#002	Susu
+#003	Mie Instan
+#003	Snack
+#004	Teh Celup
+#004	Sirup
+#004	Gula
+#005	Pet Food
+#006	Kopi
+#006	Snack
+#007	Teh Celup
+#007	Susu
+#008	Mie Instan
+#008	Snack
+#008	Sirup
+#009	Kopi
+#009	Gula
+#010	Teh Celup
+#010	Sirup
+#011	Pet Food
+#011	Snack
+#012	Kopi
+#012	Susu
+#012	Snack
+#013	Teh Celup
+#013	Gula
+#013	Snack
+#014	Mie Instan
+#014	Susu
+#015	Kopi
+#015	Gula
+#015	Susu
+#016	Teh Celup
+#016	Sirup
+#016	Snack
+#017	Pet Food
+#017	Mie Instan
+#018	Kopi
+#018	Susu
+#019	Teh Celup
+#019	Gula
+#020	Mie Instan
+#020	Snack
+#020	Susu
+#021	Kopi
+#021	Gula
+#021	Snack
+#022	Teh Celup
+#022	Sirup
+#022	Gula
+#022	Snack
+#023	Pet Food
+#023	Sirup
+#024	Kopi
+#024	Susu
+#024	Mie Instan
+#025	Teh Celup
+#025	Susu
+#025	Snack
+#026	Mie Instan
+#026	Snack
+#027	Kopi
+#027	Gula
+#028	Teh Celup
+#028	Sirup
+#029	Pet Food
+#029	Snack
+#029	Susu
+#030	Kopi
+#030	Gula
+#030	Susu
+#030	Snack
+#031	Teh Celup
+#031	Gula
+#032	Mie Instan
+#032	Snack
+#032	Sirup
+#033	Kopi
+#033	Susu
+#034	Teh Celup
+#034	Sirup
+#034	Gula
+#035	Pet Food
+#036	Kopi
+#036	Snack
+#037	Teh Celup
+#037	Susu
+#038	Mie Instan
+#038	Snack
+#039	Kopi
+#039	Gula
+#039	Susu
+#040	Teh Celup
+#040	Sirup
+#040	Snack
+#041	Pet Food
+#041	Mie Instan
+#042	Kopi
+#042	Susu
+#043	Teh Celup
+#043	Gula
+#043	Snack
+#044	Mie Instan
+#044	Susu
+#045	Kopi
+#045	Gula
+#045	Snack
+#046	Teh Celup
+#046	Sirup
+#046	Gula
+#047	Pet Food
+#047	Snack
+#048	Kopi
+#048	Susu
+#048	Mie Instan
+#049	Teh Celup
+#049	Susu
+#050	Mie Instan
+#050	Snack
+#050	Susu
+#051	Kopi
+#051	Gula
+#052	Teh Celup
+#052	Sirup
+#052	Gula
+#052	Snack
+#053	Pet Food
+#053	Sirup
+#054	Kopi
+#054	Susu
+#055	Teh Celup
+#055	Gula
+#056	Mie Instan
+#056	Snack
+#057	Kopi
+#057	Gula
+#057	Susu
+#058	Teh Celup
+#058	Sirup
+#059	Pet Food
+#059	Snack
+#059	Susu
+#060	Kopi
+#060	Snack
+#061	Teh Celup
+#061	Gula
+#061	Susu
+#062	Mie Instan
+#062	Snack
+#062	Sirup
+#063	Kopi
+#063	Susu
+#064	Teh Celup
+#064	Sirup
+#064	Gula
+#065	Pet Food
+#066	Kopi
+#066	Gula
+#066	Snack
+#067	Teh Celup
+#067	Susu
+#068	Mie Instan
+#068	Snack
+#069	Kopi
+#069	Gula
+#070	Teh Celup
+#070	Sirup
+#070	Snack
+#071	Pet Food
+#071	Mie Instan
+#072	Kopi
+#072	Susu
+#072	Snack
+#073	Teh Celup
+#073	Gula
+#074	Mie Instan
+#074	Susu
+#075	Kopi
+#075	Gula
+#075	Susu
+#076	Teh Celup
+#076	Sirup
+#076	Gula
+#076	Snack
+#077	Pet Food
+#077	Snack
+#078	Kopi
+#078	Susu
+#079	Teh Celup
+#079	Susu
+#079	Snack
+#080	Mie Instan
+#080	Snack
+#081	Kopi
+#081	Gula
+#081	Snack
+#082	Teh Celup
+#082	Sirup
+#083	Pet Food
+#083	Sirup
+#084	Kopi
+#084	Susu
+#084	Mie Instan
+#085	Teh Celup
+#085	Gula
+#086	Mie Instan
+#086	Snack
+#086	Susu
+#087	Kopi
+#087	Gula
+#088	Teh Celup
+#088	Sirup
+#088	Snack
+#089	Pet Food
+#089	Snack
+#090	Kopi
+#090	Susu
+#091	Teh Celup
+#091	Gula
+#091	Susu
+#092	Mie Instan
+#092	Snack
+#093	Kopi
+#093	Gula
+#093	Snack
+#094	Teh Celup
+#094	Sirup
+#094	Gula
+#095	Pet Food
+#095	Mie Instan
+#096	Kopi
+#096	Susu
+#096	Snack
+#097	Teh Celup
+#097	Susu
+#098	Mie Instan
+#098	Snack
+#098	Sirup
+#099	Kopi
+#099	Gula
+#099	Susu
+#100	Teh Celup
+#100	Sirup
+#100	Gula
+#100	Snack
