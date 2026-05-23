@@ -4,7 +4,7 @@ library(arulesViz)
 
 # Reading transactions from data_transaksi.txt file
 transaksi <- read.transactions(
-  file = "E:/Curriculum Vitae/Project/R 2/data_transaksi.txt",
+  file = "data_transaksi.txt",
   format = "single",
   sep = "\t",
   cols = c(1, 2),
